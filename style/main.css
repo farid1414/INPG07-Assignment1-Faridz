@@ -1,0 +1,115 @@
+a {
+  text-decoration: none;
+}
+.navbar .navbar-nav .nav-item a.nav-link {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+}
+.navbar .auth .btn-login {
+  margin-right: 5px;
+  border: none;
+  font-size: 16px;
+  color: black;
+}
+.navbar .auth .btn-login:hover {
+  font-weight: 600;
+}
+.navbar .auth .btn-daftar {
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+}
+.navbar .auth .btn-daftar:hover {
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+/* section banner */
+
+.banner .carousel-inner .carousel-item {
+  background-color: #eafefc;
+}
+.banner .carousel-inner .carousel-item .selamat-datang {
+  padding-top: 10px;
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
+}
+.banner .carousel-inner .carousel-item .title-slmt-datang {
+  color: #5a6772;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.banner .carousel-inner .carousel-item .btn-slmt-datang {
+  margin-top: 50px;
+  background-color: #533df5;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* AKhir  section banner */
+.card-jquery .card {
+  width: 16rem;
+  background-color: white;
+}
+
+footer {
+  background-color: #e7ecec;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+footer .footer-text {
+  color: #5a6772;
+  font-size: 14px;
+  font-weight: 500;
+}
+@media screen and (max-width: 400px) {
+  .banner .carousel-inner .carousel-item .selamat-datang {
+    font-size: 18px;
+  }
+  .banner .carousel-inner .carousel-item .title-slmt-datang {
+    font-size: 12px;
+  }
+  .card-jquery .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  footer .footer-text {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .navbar .auth .btn-login,
+  .navbar .auth .btn-daftar {
+    margin-top: 10px;
+    display: block;
+    border: 1px solid #5a6772;
+  }
+}
+@media screen and (max-width: 820px) {
+  .card-jquery .card {
+    width: 170px;
+    margin-bottom: 25px;
+  }
+  footer .footer-text {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .navbar .auth .btn-login,
+  .navbar .auth .btn-daftar {
+    margin-top: 10px;
+    display: block;
+    border: 1px solid #5a6772;
+  }
+}
+/* @media screen and (max-width: 1024px) {
+  .card-jquery .card {
+    width: 220px;
+  }
+} */

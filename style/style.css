@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+body {
+  background-color: #f6f7fc;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.navbar {
+  padding: 15px 0;
+  background-color: white;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 10px 6px -6px rgb(122, 121, 121);
+  z-index: 2;
+}
+.navbar .navbar-collapse .navbar-nav {
+  display: flex;
+  justify-content: end;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item a.nav-link {
+  padding: 10px 12px;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+
+.content {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+.port-header {
+  margin-top: 40px;
+  padding: 10px 0;
+  border: 3px solid #f4f3fa;
+  background-color: white;
+}
+.port-header .grid-port {
+  display: grid;
+  grid-template-columns: 15% 25% 12% auto;
+}
+.port-header .grid-port .profil-port {
+  width: 130px;
+  background-color: #f6f7fc;
+  height: 150px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+.port-header .grid-port .profil-port img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.port-header .grid-port .data-port {
+  margin-top: 15px;
+  border-right: 5px solid #f6f7fc;
+}
+.port-header .grid-port .data-port .nama-port {
+  color: black;
+  font-size: 20px;
+  font-weight: 800;
+  font-style: bold;
+}
+.port-header .grid-port .data-port .position-port {
+  color: gray;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+.port-header .grid-port .data-port .port-button {
+  display: flex;
+  margin-top: 30px;
+}
+.port-header .grid-port .data-port .port-button .btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.port-header .grid-port .data-port .port-button .btn:hover {
+  opacity: 0.5;
+}
+
+.port-header .grid-port .data-port .port-button .btn-kontak {
+  background-color: blue;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+}
+.port-header .grid-port .data-port .port-button .btn-resume {
+  background-color: white;
+  color: green;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid gray;
+}
+
+.port-header .grid-port .content-port {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+.port-header .grid-port .content-port .judul-port {
+  color: black;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  padding-right: 3rem;
+}
+.port-header .grid-port .content-port .ket-port {
+  color: gray;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-right: 3rem;
+}
+
+/* fomr portofolio */
+.form-port {
+  margin-top: 20px;
+}
+.form-group {
+  background-color: white;
+  padding-bottom: 15px;
+}
+.form-group label,
+.form-group input {
+  display: block;
+}
+.form-group label {
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.form-group input[type="text"] {
+  width: 100%;
+  height: 1.5rem;
+  border: 1px solid #b9b9bb;
+}
+.form-port .btn-submit {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.form-port .btn-submit:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+  .port-header .grid-port {
+    display: grid;
+    grid-template-columns: 35% auto;
+  }
+  .port-header .grid-port .profil-port {
+    width: 100px;
+    background-color: #f6f7fc;
+    height: 130px;
+  }
+  .port-header .grid-port .data-port .nama-port {
+    font-size: 14px;
+  }
+  .port-header .grid-port .data-port .position-port {
+    font-size: 12px;
+  }
+  .port-header .grid-port .data-port .port-button,
+  .btn-kontak,
+  .btn-resume {
+    display: block;
+  }
+  .port-header .grid-port .data-port .port-button .btn {
+    padding: 5px 0;
+    margin-bottom: 10px;
+  }
+  .port-header .grid-port .data-port .port-button .btn.btn-resume {
+    margin: 0;
+  }
+  .navbar .navbar-collapse .navbar-nav {
+    display: flex;
+    justify-content: start;
+  }
+  .navbar .navbar-collapse .navbar-nav .nav-item a.nav-link {
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .port-header .grid-port .data-port {
+    border: none;
+  }
+}
