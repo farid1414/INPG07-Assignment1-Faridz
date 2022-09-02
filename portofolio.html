@@ -28,6 +28,12 @@
             </ul>
           </div>
         </div>
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </nav>
     </header>
     <main>
@@ -44,7 +50,7 @@
                 <div class="nama-port">M Faridz Dwi Putra</div>
                 <div class="position-port">Front End Developer</div>
                 <div class="port-button">
-                  <a href="" class="btn btn-kontak">Kontak</a>
+                  <button class="btn btn-kontak">Edit</button>
                   <a href="" class="btn btn-resume">Resume</a>
                 </div>
               </div>
@@ -82,39 +88,47 @@
 
       <section class="form-port">
         <div class="container">
-          <form action="">
+          <form action="" class="form-portofolio">
             <div class="form-group">
               <label for="">Nama</label>
-              <input type="text" name="" id="" />
+              <input type="text" name="nama" id="nama" />
             </div>
             <div class="form-group">
               <label for="">Role</label>
-              <input type="text" name="" id="" />
+              <input type="text" name="role" id="role" />
             </div>
             <div class="form-group">
               <label for="">Availability</label>
-              <input type="text" name="" id="" />
+              <input type="text" name="availability" id="availability" />
             </div>
             <div class="form-group">
               <label for="">Age</label>
-              <input type="text" name="" id="" />
+              <input type="number" name="age" id="age" />
             </div>
             <div class="form-group">
               <label for="">Lokasi</label>
-              <input type="text" name="" id="" />
+              <input type="text" name="location" id="location" />
             </div>
             <div class="form-group">
               <label for="">Years Experience</label>
-              <input type="text" name="" id="" />
+              <input type="number" name="experience" id="experience" />
             </div>
             <div class="form-group">
               <label for="">Email</label>
-              <input type="text" name="" id="" />
+              <input type="email" name="emailDev" id="email" />
             </div>
-            <button type="submit" class="btn-submit">SUBMIT</button>
+            <div class="btn-form">
+              <button type="submit" class="btn btn-cancel">CANCEL</button>
+              <button type="submit" class="btn btn-reset">RESET</button>
+              <button type="submit" class="btn btn-submit" id="submit">
+                SUBMIT
+              </button>
+            </div>
           </form>
         </div>
       </section>
     </main>
+
+    <script src="./style/script.js"></script>
   </body>
 </html>
