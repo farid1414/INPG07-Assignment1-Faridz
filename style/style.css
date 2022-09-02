@@ -1,3 +1,14 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +23,9 @@ li {
 }
 body {
   background-color: #f6f7fc;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
 }
 .container {
   width: 80%;
@@ -23,6 +37,10 @@ body {
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 10px 6px -6px rgb(122, 121, 121);
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
   z-index: 2;
 }
 .navbar .navbar-collapse .navbar-nav {
@@ -34,6 +52,49 @@ body {
   font-size: 16px;
   color: black;
   font-weight: 600;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 15px;
+  right: 25px;
+  justify-content: space-between;
+  position: relative;
+}
+.menu-toggle span {
+  display: block;
+  width: 23px;
+  height: 3px;
+  right: 10px;
+  background-color: black;
+  border-radius: 5px;
+}
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0.8;
+  left: -13px;
+  top: -9px;
+  opacity: 0;
+}
+
+/* hambuerger menu */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
 }
 
 .content {
@@ -98,6 +159,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   border: none;
+  cursor: pointer;
 }
 .port-header .grid-port .data-port .port-button .btn-resume {
   background-color: white;
@@ -131,10 +193,12 @@ body {
 /* fomr portofolio */
 .form-port {
   margin-top: 20px;
+  display: none;
 }
 .form-group {
   background-color: white;
   padding-bottom: 15px;
+  padding-top: 10px;
 }
 .form-group label,
 .form-group input {
@@ -145,31 +209,82 @@ body {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 10px;
+  padding-left: 10px;
 }
-.form-group input[type="text"] {
-  width: 100%;
+.form-group input[type="text"],
+input[type="number"],
+input[type="email"] {
+  width: 98%;
   height: 1.5rem;
   border: 1px solid #b9b9bb;
+  margin-left: 10px;
+  padding: 15px 0 15px 10px;
 }
-.form-port .btn-submit {
-  display: block;
-  width: 100%;
+.btn-form {
+  margin-top: 15px;
+  display: flex;
+  justify-content: end;
+}
+.form-port .btn-form .btn {
   text-align: center;
   padding: 8px 0;
   margin-bottom: 10px;
   border: none;
   border-radius: 5px;
-  background-color: green;
-  color: white;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
 }
-.form-port .btn-submit:hover {
+.form-port .btn-form .btn.btn-submit {
+  width: 15%;
+  background-color: green;
+  color: white;
+}
+.form-port .btn-form .btn.btn-reset {
+  width: 15%;
+  font-weight: 600;
+  margin-right: 10px;
+  background-color: rgb(233, 220, 223);
+  color: black;
+}
+.form-port .btn-form .btn.btn-cancel {
+  width: 15%;
+  margin-right: 10px;
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+}
+.form-port .btn-form .btn-submit:hover {
   opacity: 0.5;
 }
 
 @media screen and (max-width: 576px) {
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 150px;
+    transform: translateX(100%);
+    transition: all 1s;
+    background-color: white;
+  }
+  .nav-item {
+    padding-bottom: 15px;
+  }
+  .navbar .navbar-collapse .navbar-nav .nav-item a.nav-link {
+    font-size: 20px;
+  }
+  .menu-toggle {
+    display: flex;
+    z-index: 1;
+  }
+  nav ul.slide {
+    transform: translateX(0);
+    z-index: 1;
+  }
   .container {
     width: 95%;
     margin: auto;
@@ -192,6 +307,7 @@ body {
   .port-header .grid-port .data-port .port-button,
   .btn-kontak,
   .btn-resume {
+    width: 100%;
     display: block;
   }
   .port-header .grid-port .data-port .port-button .btn {
@@ -212,5 +328,28 @@ body {
   }
   .port-header .grid-port .data-port {
     border: none;
+  }
+  .form-group input[type="text"],
+  input[type="number"],
+  input[type="email"] {
+    width: 90%;
+  }
+  .btn-form {
+    margin-top: 20px;
+    display: block;
+    /* background-color: red; */
+    margin-left: 10px;
+    width: 100%;
+  }
+  /* .form-port .btn-form .btn {
+    display: block;
+    width: 100%;
+  } */
+  .form-port .btn-form .btn.btn-reset,
+  .form-port .btn-form .btn.btn-submit,
+  .form-port .btn-form .btn.btn-cancel {
+    display: block;
+    margin-bottom: 15px;
+    width: 90%;
   }
 }
